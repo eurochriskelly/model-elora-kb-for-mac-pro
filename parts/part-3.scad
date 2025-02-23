@@ -1,15 +1,18 @@
+// A side held by an m5 nut and bold and with a hole for a TRRS cable
+use <../model/side.scad>;
 
-
-
-module side() {
-  //color([0.7,0.7, 1.0])
-  translate([0, 0, 3]) import("./sides.stl");
-  color("red") 
-  translate([2.7, 12, -5])
-  cube([2, 8, 20]);
-  color("red") 
-  translate([2, -20, -5])
-  cube([2.7, 8, 20]);
+module hole_cutter_cyl() {
+  rotate([90, 0, 90])
+  cylinder(h=18, d=3, center=true, $fn=24);
 }
 
-side();
+difference() {
+  side(5);
+
+  color("red")
+  translate([2,-10, 10])
+  hull() {
+    hole_cutter_cyl();
+    translate([0, 0, 5]) hole_cutter_cyl();
+  }
+}

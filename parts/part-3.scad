@@ -1,4 +1,8 @@
+// 
+// PART-3
 // A side held by an m5 nut and bold and with a hole for a TRRS cable
+// 
+
 use <../model/side.scad>;
 
 module hole_cutter_cyl() {

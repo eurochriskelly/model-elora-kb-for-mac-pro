@@ -45,13 +45,12 @@ module cutter() {
       rotate([0,45,0])
       color("green") translate([0, 21.5, 15]) cube([9, 95, 7], center=true);
 
-      color("red") translate([0, -10, 0]) cube([6, 1.5,  90], center=true);
-      color("red") translate([0, 50, 0]) cube([6, 1.5,  90], center=true);
+      color("red") translate([0, -10, 0]) cube([6, 2,  90], center=true);
+      color("red") translate([0, 50, 0]) cube([6, 2,  90], center=true);
     }
   }
 }
 
-rotate([0, 180, 0])
 difference() {
   cutter();
   union() {
